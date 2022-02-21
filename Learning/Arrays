@@ -1,0 +1,17 @@
+pragma solidity ^0.6.0;
+
+contract MyContract {
+    // Arrays 
+    uint[] public uintArray = [1,2,3]; //the numbers/values in the aarray are accessed with their index
+    string[] public stringArray = ["apple", "banana", "chocolate"];
+    string[] public values; //empty array
+    uint[][] public myArray2D = [ [1,2,3], [4,5,6] ]; //2D array
+
+    function addValue(string memory _value) public {
+        values.push(_value); //the push method will add values to the end of my empty array 
+    }
+
+    function valueCount() public view returns(uint) {
+        return values.length;
+    }
+}
