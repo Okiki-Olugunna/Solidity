@@ -1,0 +1,27 @@
+pragma solidity ^0.6.0;
+
+contract MyContract{
+    // State variables
+    int public myInt = 1;
+    uint public myUint = 1;       //unsigned integer
+    uint256 public myUint256 = 1; //256 is the default
+    uint8 public myUint8 = 1;     //small datatype to optimize performance in smart contract
+
+    string public myString = "Hello world";
+    bytes32 public myBytes32 = "Helloo world"; // more performant than a regular string data type
+
+    address public randomAddress = 0x002e08000acbbaE2155Fab7AC01929564949070d;
+
+    struct MyStruct {
+        uint myUint;
+        string myString;
+    }
+
+    MyStruct public myStruct = MyStruct(1, "Hello bystanders");
+
+    // Local variables
+    function getValue() public pure returns(uint) {
+        uint value = 1;
+        return value;
+    }
+}
