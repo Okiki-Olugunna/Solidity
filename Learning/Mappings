@@ -1,0 +1,39 @@
+pragma solidity ^0.6.0;
+
+contract LearningMappings {
+    //Mappings
+        // mapping(key => value) myMapping
+        //mappings use key value stores, to look things up based on a key, to get a value back
+        //reminds me of dictionaries in python 
+        //makes the blockchain work like a database where you can look things up (the blockchain is a database - public ledger)
+    
+    mapping(uint => string) public names;
+
+    constructor() public {
+        names[1] = "Ayo";
+        names[2] = "Bola";
+        names[3] = "Chuck";
+    }
+
+    //creating a database of books
+    mapping(uint => Book) public books;
+    
+    struct Book {
+        string title;
+        string author;
+    }
+
+    function addBook(uint _id, string memory _title, string memory _author) public {
+        books[_id] = Book(_title, _author);
+    }
+
+    //Nested mappings
+        //mapping(key => mapping(key2 => value2)) public myMapping
+
+    mapping(address => mapping(uint => Book)) public myBooks;
+
+    function addMyBook(uint _id, string memory _title, string memory _author) public {
+        myBooks[msg.sender][_id] = Book(_title, _author); //you have to input both the address and the book id to return the book title and author 
+    }
+    
+}
