@@ -25,8 +25,8 @@ contract HotelRoom {
     }
 
     receive() external payable onlyWhileVacant price(2 ether) {
-        // require(currentStatus = Statuses.Vacant, "Currently occupied."); - used a modifier instead of the require function
-        // require(msg.value >= 2 ether, "Not enough ether provided."); - used a modifier instead of the require function
+        // require(currentStatus = Statuses.Vacant, "Currently occupied."); - used a modifier instead of just putting it inside this function
+        // require(msg.value >= 2 ether, "Not enough ether provided."); - used a modifier instead of just putting it inside this function
         currentStatus = Statuses.Occupied;
         owner.transfer(msg.value);
         emit Occupy(msg.sender, msg.value);
