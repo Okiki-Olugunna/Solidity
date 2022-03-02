@@ -1,6 +1,6 @@
 {
   "name": "social-network",
-  "version": "0.1.0",
+  "version": "0.1.0", 
   "description": "A Decentralised Social Network",
   "author": "okiki.business@gmail.com",
   "dependencies": {
