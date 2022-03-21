@@ -1,4 +1,4 @@
-from brownie import accounts, SimpleStorage, config
+from brownie import accounts, SimpleStorage, config 
 
 
 def read_contract():
