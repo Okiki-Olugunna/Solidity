@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
+
+import "hardhat/console.sol";
+
+contract Contract {
+    
+    //
+    address payable public owner;
+
+    address payable public charity; 
+
+    address payable public me;
+
+    constructor(address _charity) {
+        owner = payable(msg.sender);
+        charity = payable(_charity);
+    }
+    
+    receive() external payable {}
+
+    function tip() public payable {
+        owner.transfer(msg.value); 
+        /*
+        // forwards all remaining gas along 
+		(bool success, ) = owner.call{ value: msg.value }("");
+		console.log(success);
+        */
+    }
+
+    function donate() public payable {
+        charity.transfer(address(this).balance);
+        selfdestruct(me); 
+    }
+
+
+}
