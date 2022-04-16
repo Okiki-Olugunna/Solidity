@@ -1,0 +1,19 @@
+/* 
+Create an external, pure function called sumAndAverage that has four uint parameters.
+
+Find both the sum and the average of the four numbers. Return these two values in this order as unsigned integers.
+*/
+
+
+// SPDX-License-Identifier: MIT 
+
+pragma solidity ^0.8.4;
+
+contract Contract {
+    
+    function sumAndAverage(uint _num1, uint _num2, uint _num3, uint _num4) external pure returns(uint, uint) {
+        uint sum = _num1 + _num2 + _num3 + _num4;
+        uint average = sum / 4;
+        return (sum, average);
+    }
+}
