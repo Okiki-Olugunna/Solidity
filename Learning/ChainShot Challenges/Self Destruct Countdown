@@ -1,5 +1,5 @@
 /*
-Create an external function to the contract called tick.
+Create a contract with an external function called tick.
 
 After calling tick 10 times, it should selfdestruct the contract.
 */
